@@ -1,0 +1,26 @@
+:host {
+
+    background: white;
+}
+mat-card {
+    margin: 0.5rem auto;
+    width: 100;
+    border: 1px solid white;
+
+    h1 {
+        letter-spacing: 3px;
+        text-align: center;
+        margin-top: 0px;
+    }
+    margin-top: 0px;
+    margin-bottom: 0px;
+    mat-card-content {
+
+        padding-left: 20px;
+        height: 30px;
+        text-align: center;
+
+        
+    }
+    
+}

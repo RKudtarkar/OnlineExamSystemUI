@@ -1,0 +1,20 @@
+@import "../../../../theme.scss";
+
+mat-toolbar {
+    .spacer {
+        flex: 1 1 auto;
+    }
+    .user-info {
+        display: flex;
+        align-items: center;
+    }
+
+    button {
+        margin-left: 1rem;
+    }
+    span {
+
+        color: #000000;
+        font-size: 40px;
+    }
+}
