@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { SharedModule } from '../../../../shared/shared.module';
+
+import { ApiService } from '../../../../shared/services/api.service';
+import { ICategory } from '../../../models/CategoryModel';
 export interface PeriodicElement {
   name: string;
   position: number;
@@ -32,6 +35,19 @@ const ELEMENT_DATA: PeriodicElement[] = [
 
 export class CategoryListComponent {
 
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
-  dataSource = ELEMENT_DATA;
+  displayedColumns: string[] = ['categoryId', 'categoryName'];//,'action'];
+
+  lstcategory: ICategory[] = [];
+  constructor(private apiService: ApiService) 
+  {
+    apiService.getBooks().subscribe({
+      next: (res: ICategory[]) => {
+        this.lstcategory = [];
+        //res.forEach((b) => this.lstcategory.push(b));
+        this.lstcategory=res;
+        console.log(res)
+      }
+    });
+  }
+
 }

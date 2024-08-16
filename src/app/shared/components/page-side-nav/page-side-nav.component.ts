@@ -27,7 +27,7 @@ export class PageSideNavComponent {
       this.panelName = "Admin"
       this.navItems = [
         { value: "Add Admin", link: "AddAdmin" },
-        { value: "Category", link: "Category" },
+        { value: "Category", link: "CategoryList" },
         { value: "Subject", link: "Subject" },
         { value: "Exam", link: "Exam" },
         { value: "Question", link: "Question" },

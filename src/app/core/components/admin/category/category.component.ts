@@ -1,19 +1,17 @@
 import { SharedModule } from '../../../../shared/shared.module';
-import {AfterViewInit, Component, ViewChild} from '@angular/core';
-import {MatPaginator, MatPaginatorModule} from '@angular/material/paginator';
-import {MatTableDataSource, MatTableModule} from '@angular/material/table';
+import { AfterViewInit, Component, ViewChild } from '@angular/core';
+import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
+import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { ApiService } from '../../../../shared/services/api.service';
+import { ICategory } from '../../../models/CategoryModel';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 export interface CategoryModel {
   CategoryId: number;
   CategoryName: string;
 }
 
-const ELEMENT_DATA: CategoryModel[] = [
-  {CategoryId: 1, CategoryName: 'Hydrogen'},
-  {CategoryId: 1, CategoryName: 'Hydrogen'},
-  
-];
+
 @Component({
   selector: 'app-category',
   standalone: true,
@@ -23,11 +21,54 @@ const ELEMENT_DATA: CategoryModel[] = [
 })
 export class CategoryComponent //implements AfterViewInit
 {
-  displayedColumns: string[] = ['CategoryId', 'CategoryName','action'];
-  dataSource = ELEMENT_DATA;
-  //dataSource=this.apiService.getCategory().subscribe();
-  
-  
-  
+  newCategory: FormGroup;
+  constructor(fb: FormBuilder, private apiService: ApiService) {
+    this.newCategory = fb.group({
+      category: fb.control(''),
+    });
+  }
 }
+
+// addNewCategory()
+// {
+//   let category: CategoryModel = {
+//         CategoryId: 0,
+//         CategoryName: this.newCategory.get("category")?.value,
+//       }
+
+//   this.apiService.addNewBook(category).subscribe({
+//     next: (res) => {
+//       debugger;
+//       console.log(res);
+//       // if (res === 'inserted') {
+//       //   this.snakbar.open("book added", "OK");
+//       // }
+//     }
+//   })
+      
+
+      
+// }
+
+
+
+// addNewCategory() {
+//   let category: ICategory = {
+//     categoryId: 0,
+//     categoryName: newCategory.get("category")?.value,
+//   }
+
+//   apiService.InsertCategory().subscribe({
+//     next: (res: ICategory[]) => {
+//       this.lstcategory = [];
+//       //res.forEach((b) => this.lstcategory.push(b));
+//       this.lstcategory = res;
+//       console.log(res)
+//     }
+//   });
+// }
+
+
+
+
 

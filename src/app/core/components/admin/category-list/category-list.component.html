@@ -1,35 +1,75 @@
+<!-- <mat-card>
+    <mat-card-header>
+        <mat-card-title>category</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <mat-form-field color="accent">
+            <mat-label>Category</mat-label>
+            <input matInput form="category">
+        </mat-form-field>
 
-<div class="flex justify-end p-5"><button mat-flat-button routerLink="Category" color="primary">Add
+        <mat-form-field color="accent">
+            <mat-label>SubCategory</mat-label>
+            <input matInput form="subCategory">
+        </mat-form-field>
+
+        <button mat-stroked-button color="accent">save</button>
+    </mat-card-content>
+
+
+    
+    <mat-card-content>
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+            
+            <ng-container matColumnDef="CategoryId">
+                <th mat-header-cell *matHeaderCellDef> No. </th>
+                <td mat-cell *matCellDef="let element"> {{element.CategoryId}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="CategoryName">
+                <th mat-header-cell *matHeaderCellDef> Category Name </th>
+                <td mat-cell *matCellDef="let element"> {{element.CategoryName}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="action">
+                <th mat-header-cell *matHeaderCellDef> Action </th>
+                <td mat-cell *matCellDef="let element">
+                    <button mat-raised-button color="primary">Edit</button>
+                    <Span> | </Span>
+                    <button mat-raised-button color="warn">Delete</button>
+                </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+    </mat-card-content>
+</mat-card> -->
+
+
+<div class="flex justify-end p-5"><button mat-flat-button routerLink="../Category" color="primary">Add
     Category</button></div>
-<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-
-    <!--- Note that these columns can be defined in any order.
-          The actual rendered columns are set as a property on the row definition" -->
-
-    <!-- Position Column -->
-    <ng-container matColumnDef="position">
-        <th mat-header-cell *matHeaderCellDef> No. </th>
-        <td mat-cell *matCellDef="let element"> {{element.position}} </td>
-    </ng-container>
-
-    <!-- Name Column -->
-    <ng-container matColumnDef="name">
-        <th mat-header-cell *matHeaderCellDef> Name </th>
-        <td mat-cell *matCellDef="let element"> {{element.name}} </td>
-    </ng-container>
-
-    <!-- Weight Column -->
-    <ng-container matColumnDef="weight">
-        <th mat-header-cell *matHeaderCellDef> Weight </th>
-        <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
-    </ng-container>
-
-    <!-- Symbol Column -->
-    <ng-container matColumnDef="symbol">
-        <th mat-header-cell *matHeaderCellDef> Symbol </th>
-        <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
-    </ng-container>
-
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-</table>
+@if(lstcategory.length>0){
+    <table mat-table [dataSource]="lstcategory" class="mat-elevation-z3">
+        <ng-container matColumnDef="categoryId">
+            <th mat-header-cell *matHeaderCellDef> categoryId </th>
+            <td mat-cell *matCellDef="let element"> {{element.categoryId}} </td>
+        </ng-container>
+        
+        <ng-container matColumnDef="categoryName">
+            <th mat-header-cell *matHeaderCellDef> categoryName </th>
+            <td mat-cell *matCellDef="let element"> {{element.categoryName}} </td>
+        </ng-container>
+    
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+}
+@else {
+<mat-card>
+    <mat-card-content>
+        <h2>No Category Created Yet!</h2>
+    </mat-card-content>
+</mat-card>
+}
