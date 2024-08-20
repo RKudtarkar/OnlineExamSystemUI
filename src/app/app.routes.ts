@@ -11,6 +11,7 @@ import { StudentListComponent } from './core/components/admin/student-list/stude
 import { CategoryListComponent } from './core/components/admin/category-list/category-list.component';
 import { AddAdminComponent } from './core/components/admin/add-admin/add-admin.component';
 import { EmployeeListComponent } from './core/components/admin/employee-list/employee-list.component';
+import { AddSubjectComponent } from './core/components/admin/add-subject/add-subject.component';
 
 export const routes: Routes = [
 
@@ -19,10 +20,11 @@ export const routes: Routes = [
     { path: "Category", component: CategoryComponent },
     { path: "CategoryList", component: CategoryListComponent },
     { path: "Subject", component: SubjectComponent },
+    { path: "SubjectAdd", component: AddSubjectComponent },
     { path: "Exam", component: ExamComponent },
     { path: "Question", component: QuestionComponent },
     { path: "result", component: ResultComponent },
-    { path: "Student List", component: StudentListComponent },
+    { path: "StudentList", component: StudentListComponent },
     { path: "AddAdmin", component: AddAdminComponent },
     { path: "EmployeeList", component: EmployeeListComponent },
 

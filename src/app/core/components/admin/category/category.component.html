@@ -21,17 +21,20 @@
     <mat-card-header>
         <mat-card-title>category</mat-card-title>
     </mat-card-header>
-    <mat-card-content>
+    <mat-card-content [formGroup]="newCategory">
         <mat-form-field color="accent">
             <mat-label>Category</mat-label>
-            <input matInput formControlName="category">
+            <input matInput formControlName="categoryId">
         </mat-form-field>
-        
-        <button mat-stroked-button color="accent">save</button>
+        <mat-form-field color="accent">
+            <mat-label>SubCategory</mat-label>
+            <input matInput formControlName="categoryName">
+        </mat-form-field>
+        <button mat-stroked-button color="accent" (click)="addNewCategory()">save</button>
 
         <div class="flex justify-end p-5">
             <button mat-flat-button routerLink="../CategoryList" color="primary">
-                back to Category list</button>
+                back to Employee list</button>
         </div>
     </mat-card-content>
 </mat-card>

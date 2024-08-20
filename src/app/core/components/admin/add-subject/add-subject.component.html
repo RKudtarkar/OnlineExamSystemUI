@@ -1,0 +1,31 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>category</mat-card-title>
+    </mat-card-header>
+    <mat-card-content [formGroup]="newCategory">
+        <mat-form-field color="accent">
+            <mat-label>subject name</mat-label>
+            <input matInput formControlName="subjectName">
+        </mat-form-field>
+        <!-- <mat-form-field color="accent">
+            <mat-label>SubCategory</mat-label>
+            <input matInput formControlName="categoryName">
+        </mat-form-field> -->
+        <mat-form-field color="accent" >
+            <mat-label>category</mat-label>
+            <mat-select formControlName="category" #categorySelect>
+                @for (option of categoryOptions; track categoryOptions) {
+                <mat-option [value]="option.value">
+                    {{option.displayValue}}
+                </mat-option>
+            }
+            </mat-select>
+        </mat-form-field>
+        <button mat-stroked-button color="accent" (click)="addNewSubject()">save</button>
+
+        <div class="flex justify-end p-5">
+            <button mat-flat-button routerLink="/Subject" color="primary">
+                back to Subject list</button>
+        </div>
+    </mat-card-content>
+</mat-card>

@@ -1,0 +1,19 @@
+@import "../../../../../theme.scss";
+
+table {
+  width: 100%;
+}
+
+mat-card-content {
+  mat-form-field {
+    padding-right: 10px;
+
+    input {
+      height: 20px;
+    }
+  }
+
+  button {
+    height: 40px;
+  }
+}

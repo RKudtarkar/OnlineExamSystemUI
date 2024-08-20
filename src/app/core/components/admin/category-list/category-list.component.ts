@@ -40,9 +40,10 @@ export class CategoryListComponent {
   lstcategory: ICategory[] = [];
   constructor(private apiService: ApiService) 
   {
-    apiService.getBooks().subscribe({
+    this.lstcategory = [];  
+    apiService.getCategory().subscribe({
       next: (res: ICategory[]) => {
-        this.lstcategory = [];
+        
         //res.forEach((b) => this.lstcategory.push(b));
         this.lstcategory=res;
         console.log(res)

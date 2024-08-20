@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { ICategory } from '../../core/models/CategoryModel';
+import { InsertSubject, ISubject } from '../../core/models/SubjectModel';
 
 
 @Injectable({
@@ -21,14 +22,25 @@ export class ApiService {
   //   return this.http.post(this.baseUrl + "Category/Get", { responseType: "text" });
   // }
 
-  getBooks() {
+  getCategory() {
     return this.http.get<ICategory[]>(this.baseUrl + "Category/GetBooks/")
     //return this.http.post<ICategory[]>(this.baseUrl + 'Category/GetBooks','', { responseType: "text" });
   }
 
   InsertCategory(category: ICategory ) {
 
-    return this.http.post(this.baseUrl + "AddCategory", category, { responseType: "text" })
+    return this.http.post(this.baseUrl + "Category/InsertCategory", category, { responseType: "text" })
   }
+
+  getSubjects() {
+    return this.http.get<ISubject[]>(this.baseUrl + "Category/GetSubject/")
+    //return this.http.post<ICategory[]>(this.baseUrl + 'Category/GetBooks','', { responseType: "text" });
+  }
+
+  InsertSubject(subject: InsertSubject ) {
+
+    return this.http.post(this.baseUrl + "Category/InsertSubject", subject, { responseType: "text" })
+  }
+
   
 }

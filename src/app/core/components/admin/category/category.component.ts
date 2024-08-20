@@ -5,6 +5,7 @@ import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { ApiService } from '../../../../shared/services/api.service';
 import { ICategory } from '../../../models/CategoryModel';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 export interface CategoryModel {
   CategoryId: number;
@@ -22,12 +23,36 @@ export interface CategoryModel {
 export class CategoryComponent //implements AfterViewInit
 {
   newCategory: FormGroup;
-  constructor(fb: FormBuilder, private apiService: ApiService) {
+  
+  constructor(fb: FormBuilder, private apiService: ApiService, private snakbar: MatSnackBar) {
     this.newCategory = fb.group({
-      category: fb.control(''),
+      categoryId: fb.control(''),
+      categoryName: fb.control(''),
     });
+   }
+
+   addNewCategory() {
+    let category: ICategory = {
+      categoryId: 0,
+      categoryName: this.newCategory.get("categoryName")?.value,
+    }
+  
+    this.apiService.InsertCategory(category).subscribe({
+      next: (res) => {
+        if (res === "cannot insert") {
+          this.snakbar.open("already exist!", "OK");
+        } else {
+          this.snakbar.open("INSERTED", "OK");
+        }
+      }
+    })
   }
+
 }
+
+
+
+
 
 // addNewCategory()
 // {
