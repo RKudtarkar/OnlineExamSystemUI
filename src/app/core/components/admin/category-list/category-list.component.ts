@@ -46,9 +46,10 @@ export class CategoryListComponent {
         
         //res.forEach((b) => this.lstcategory.push(b));
         this.lstcategory=res;
-        console.log(res)
+        //console.log(res)
       }
     });
   }
 
 }
+

@@ -4,8 +4,8 @@
     </mat-card-content>
 </mat-card>
 
-<mat-nav-list>
+<mat-nav-list class="example-button-row">
     @for (item of navItems; track navItems) {
-        <a mat-list-item routerLink="/{{item.link}}" routerLinkActive>{{item.value}}</a>
+        <a  mat-list-item routerLink="/{{item.link}}" routerLinkActive>{{item.value}}</a>
     }
 </mat-nav-list>

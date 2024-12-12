@@ -10,12 +10,22 @@
 // Be sure that you only ever include this mixin once!
 @include mat.core();
 
-// hue. Available color palettes: https://material.io/design/color/
-$OnlineExamSystemUI-primary: mat.define-palette(mat.$amber-palette,300); 
-// $OnlineExamSystemUI-accent: mat.define-palette(mat.$blue-palette, A200, A100, A400);
-$OnlineExamSystemUI-accent: mat.define-palette(mat.$red-palette,800); 
-// The warn palette is optional (defaults to red).
-$OnlineExamSystemUI-warn: mat.define-palette(mat.$red-palette);
+
+// yellow 
+// // hue. Available color palettes: https://material.io/design/color/
+// $OnlineExamSystemUI-primary: mat.define-palette(mat.$amber-palette,300); 
+// // $OnlineExamSystemUI-accent: mat.define-palette(mat.$blue-palette, A200, A100, A400);
+// $OnlineExamSystemUI-accent: mat.define-palette(mat.$red-palette,800); 
+// // The warn palette is optional (defaults to red).
+// $OnlineExamSystemUI-warn: mat.define-palette(mat.$red-palette);
+
+
+
+// Blue 
+$OnlineExamSystemUI-primary: mat.define-palette(mat.$light-blue-palette,50); 
+$OnlineExamSystemUI-accent: mat.define-palette(mat.$light-blue-palette,800); 
+$OnlineExamSystemUI-warn: mat.define-palette(mat.$light-blue-palette);
+
 
 // Create the theme object. A theme consists of configurations for individual
 // theming systems such as "color" or "typography".

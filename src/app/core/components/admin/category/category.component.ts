@@ -42,7 +42,10 @@ export class CategoryComponent //implements AfterViewInit
         if (res === "cannot insert") {
           this.snakbar.open("already exist!", "OK");
         } else {
-          this.snakbar.open("INSERTED", "OK");
+          if(this.snakbar.open("INSERTED", "OK"))
+            {
+             //router.navigateByUrl("/login");
+            }
         }
       }
     })

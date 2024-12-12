@@ -5,6 +5,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { SharedModule } from '../../../../shared/shared.module';
 import { ICategory } from '../../../models/CategoryModel';
+import { Router } from '@angular/router';
 
 
 export interface categoryOption {
@@ -22,7 +23,7 @@ export interface categoryOption {
 export class AddSubjectComponent {
   newCategory: FormGroup;
   categoryOptions: categoryOption[] = [];
-  constructor(fb: FormBuilder, private apiService: ApiService, private snakbar: MatSnackBar) {
+  constructor(router: Router,fb: FormBuilder, private apiService: ApiService, private snakbar: MatSnackBar) {
     this.newCategory = fb.group({
       category: fb.control(''),
       subjectName: fb.control(''),
@@ -56,7 +57,11 @@ export class AddSubjectComponent {
         if (res === "cannot insert") {
           this.snakbar.open("already exist!", "OK");
         } else {
-          this.snakbar.open("INSERTED", "OK");
+           if(this.snakbar.open("INSERTED", "OK"))
+           {
+            //router.navigateByUrl("/login");
+           }
+
         }
       }
     })

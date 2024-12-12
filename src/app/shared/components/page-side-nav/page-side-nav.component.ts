@@ -34,7 +34,9 @@ export class PageSideNavComponent {
         { value: "result", link: "result" },
         { value: "Student List", link: "StudentList" },
         { value: "Admin Panel", link: "AdminPanel" },
-        { value: "Employee List", link: "EmployeeList" }
+        { value: "Employee List", link: "EmployeeList" },
+        { value: "Dialog", link: "Dialog" },
+        // { value: "Dialog1", link: "Dialog1" }
       ]
     }
     else {

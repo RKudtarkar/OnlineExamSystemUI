@@ -12,6 +12,8 @@ import { CategoryListComponent } from './core/components/admin/category-list/cat
 import { AddAdminComponent } from './core/components/admin/add-admin/add-admin.component';
 import { EmployeeListComponent } from './core/components/admin/employee-list/employee-list.component';
 import { AddSubjectComponent } from './core/components/admin/add-subject/add-subject.component';
+// import { DialogAnimationsExample, DialogAnimationsExampleDialog } from './core/components/admin/dialog-animations-example/dialog-animations-example.component';
+
 
 export const routes: Routes = [
 
@@ -27,6 +29,8 @@ export const routes: Routes = [
     { path: "StudentList", component: StudentListComponent },
     { path: "AddAdmin", component: AddAdminComponent },
     { path: "EmployeeList", component: EmployeeListComponent },
+    // { path: "Dialog", component: DialogAnimationsExample },
+    // { path: "Dialog1", component: DialogAnimationsExampleDialog },
 
     { path: "**", component: PageNotFoundComponent }
 ];

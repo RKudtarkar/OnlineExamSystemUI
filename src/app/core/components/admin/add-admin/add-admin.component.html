@@ -1,21 +1,21 @@
 <mat-card>
     <mat-card-header>
-        <mat-card-title>category</mat-card-title>
+        <mat-card-title>Add Admin</mat-card-title>
     </mat-card-header>
     <mat-card-content [formGroup]="newCategory">
         <mat-form-field color="accent">
-            <mat-label>Category</mat-label>
+            <mat-label>User Name</mat-label>
             <input matInput formControlName="categoryId">
         </mat-form-field>
         <mat-form-field color="accent">
-            <mat-label>SubCategory</mat-label>
+            <mat-label>Address</mat-label>
             <input matInput formControlName="categoryName">
         </mat-form-field>
         <button mat-stroked-button color="accent" (click)="addNewCategory()">save</button>
 
         <div class="flex justify-end p-5">
             <button mat-flat-button routerLink="../EmployeeList" color="primary">
-                back to Employee list</button>
+                back to Admin list</button>
         </div>
 
         <!-- <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
